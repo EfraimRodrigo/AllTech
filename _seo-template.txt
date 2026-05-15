@@ -1,0 +1,62 @@
+<!-- SEO INJECTED-MANUAL -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://alltech.com.br/INDEX_PATH">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="PAGE_TYPE">
+  <meta property="og:url" content="https://alltech.com.br/INDEX_PATH">
+  <meta property="og:title" content="INDEX_TITLE">
+  <meta property="og:description" content="INDEX_DESCRIPTION">
+  <meta property="og:image" content="https://alltech.com.br/OG_IMAGE">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="AllTech Tecnologia">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://alltech.com.br/INDEX_PATH">
+  <meta name="twitter:title" content="INDEX_TITLE">
+  <meta name="twitter:description" content="INDEX_DESCRIPTION">
+  <meta name="twitter:image" content="https://alltech.com.br/OG_IMAGE">
+
+  <!-- JSON-LD WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "INDEX_TITLE",
+    "description": "INDEX_DESCRIPTION",
+    "url": "https://alltech.com.br/INDEX_PATH",
+    "image": "https://alltech.com.br/OG_IMAGE",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "AllTech Tecnologia",
+      "url": "https://alltech.com.br"
+    },
+    "potentialAction": {
+      "@type": "ContactAction",
+      "target": "https://alltech.com.br/contato.html",
+      "name": "Falar com um especialista"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AllTech Tecnologia",
+    "url": "https://alltech.com.br",
+    "logo": "https://alltech.com.br/assets/logo.png",
+    "description": "Líder em soluções de automação comercial há mais de 40 anos. Tecnologia brasileira feita para resultados reais.",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-11-97405-1804",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": "pt-BR"
+    }]
+  }
+  </script>
+<!-- END-INJECTED-SEO -->

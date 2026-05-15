@@ -53,12 +53,12 @@ ul { list-style: none; }
 }
 
 /* ── 3. TYPOGRAPHY ── */
-.font-display { font-family: 'Syne', sans-serif; }
+.font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
 h1, h2, h3 { 
-  font-family: 'Syne', sans-serif; 
+  font-family: 'Plus Jakarta Sans', sans-serif; 
   font-weight: 700; 
   line-height: 1.15; 
-  letter-spacing: -0.01em; 
+  letter-spacing: -0.02em; 
   max-width: 1000px;
 }
 h1 { font-size: clamp(2rem, 4.5vw, 3.8rem); }
@@ -129,7 +129,7 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   object-fit: contain;
 }
 .nav-logo-text {
-  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
   font-size: 1.1rem; color: white; letter-spacing: normal;
 }
 .nav-logo-tagline { font-size: .62rem; color: rgba(255,255,255,.4); letter-spacing: .05em; text-transform: uppercase; display: block; line-height: 1; margin-top: 2px; }
@@ -309,7 +309,7 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08);
 }
 .hero-stat .val {
-  font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.02em;
 }
 .hero-stat .lbl { font-size: .72rem; color: rgba(255,255,255,.4); letter-spacing: .02em; text-transform: uppercase; margin-top: .2rem; }
 
@@ -338,8 +338,8 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
 }
 .authority-item { text-align: center; }
 .authority-num {
-  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.02em;
 }
 .authority-num sup { font-size: 50%; }
 .authority-lbl { font-size: .8rem; color: rgba(255,255,255,.5); letter-spacing: .02em; text-transform: uppercase; margin-top: .35rem; }
@@ -436,8 +436,8 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
 }
 .dif-card:hover { border-color: rgba(0,164,204,.2); box-shadow: var(--shadow-md); }
 .dif-num {
-  font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 700;
-  color: rgba(0,164,204,.2); line-height: 1; flex-shrink: 0; min-width: 60px; letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.5rem; font-weight: 700;
+  color: rgba(0,164,204,.2); line-height: 1; flex-shrink: 0; min-width: 60px; letter-spacing: -0.02em;
 }
 .dif-content h3 { color: var(--navy); margin-bottom: .5rem; }
 
@@ -487,7 +487,7 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   width: 44px; height: 44px; border-radius: 50%;
   background: linear-gradient(135deg, var(--navy), var(--cyan));
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 800; color: white; font-size: .9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: white; font-size: .9rem;
   flex-shrink: 0;
 }
 .depo-name { font-weight: 700; font-size: .9rem; color: var(--navy); }
@@ -532,7 +532,7 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
 /* Grupo de texto do footer — mesmo padrão do nav */
 .footer-logo-group { display: flex; flex-direction: column; }
 .footer-logo-text {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: white;
@@ -557,7 +557,7 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   transition: background .2s, color .2s, border-color .2s;
 }
 .footer-socials a:hover { background: var(--cyan); color: var(--navy-deep); border-color: var(--cyan); }
-.footer-col-title { font-family: 'Syne', sans-serif; font-weight: 700; color: white; font-size: .9rem; margin-bottom: 1rem; }
+.footer-col-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: white; font-size: .9rem; margin-bottom: 1rem; }
 .footer-col ul { display: flex; flex-direction: column; gap: .6rem; }
 .footer-col ul a { color: var(--gray-400); font-size: .85rem; transition: color .2s; }
 .footer-col ul a:hover { color: white; }
@@ -664,13 +664,13 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   width: 60px; height: 60px; border-radius: var(--radius-md);
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 800; color: white; font-size: 1.2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: white; font-size: 1.2rem;
 }
 .case-company { color: white; font-size: 1.1rem; font-weight: 700; }
 .case-segment { color: rgba(255,255,255,.55); font-size: .8rem; }
 .case-card-body { padding: 2rem; }
 .case-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
-.case-metric .val { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.01em; }
+.case-metric .val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cyan); line-height: 1; letter-spacing: -0.02em; }
 .case-metric .lbl { font-size: .72rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: .02em; }
 
 /* ── 20b. LEGAL PAGES (privacidade, termos) ── */
@@ -716,8 +716,8 @@ p  { font-size: clamp(.95rem, 1.2vw, 1.05rem); color: var(--gray-600); line-heig
   width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
   background: var(--navy); border: 2px solid var(--cyan);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 700; font-size: .8rem; color: var(--cyan);
-  z-index: 1; letter-spacing: -0.01em;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: .8rem; color: var(--cyan);
+  z-index: 1; letter-spacing: -0.02em;
 }
 .tl-content { flex: 1; }
 .tl-year { font-size: .72rem; color: var(--cyan); font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
@@ -909,7 +909,7 @@ textarea:focus-visible {
 .text-sm-muted  { font-size: .8rem; color: var(--gray-400); }
 .text-sm-white  { font-size: .8rem; color: rgba(255,255,255,.7); }
 .label-white    { color: white; opacity: 0.8; }
-.font-syne      { font-family: 'Syne', sans-serif; }
+.font-syne      { font-family: 'Plus Jakarta Sans', sans-serif; }
 
 /* Espaçamentos */
 .mt-2  { margin-top: .5rem; }
@@ -1133,3 +1133,125 @@ textarea:focus-visible {
 }
 .newsletter-form input::placeholder { color: rgba(255,255,255,.4); }
 .newsletter-form input:focus { border-color: var(--cyan); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ── 27. SEÇÃO SERVIÇOS ──
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#servicos {
+  padding: var(--section-pad);
+  background: white;
+}
+#servicos .section-header h2 { color: var(--navy); }
+#servicos .section-header p  { color: var(--gray-600); }
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px)  { .servicos-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .servicos-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.servico-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+.servico-card:hover {
+  border-color: rgba(0,164,204,.25);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.servico-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(0,43,73,.06), rgba(0,164,204,.12));
+  border: 1px solid rgba(0,164,204,.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+.servico-card h3 {
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin: 0;
+}
+.servico-card p {
+  color: var(--gray-600);
+  font-size: .9rem;
+  line-height: 1.65;
+  flex: 1;
+  margin: 0;
+}
+.servico-link {
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: .85rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  transition: gap .2s;
+  margin-top: auto;
+}
+.servico-link:hover { gap: .5rem; }
+
+/* Card CTA — destaque especial */
+.servico-card-cta {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  border-color: transparent;
+}
+.servico-card-cta h3 { color: white; }
+.servico-card-cta p  { color: rgba(255,255,255,.65); }
+.servico-card-cta:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 20px 40px rgba(0,43,73,.3);
+}
+
+/* Adicionar Serviços no navbar mobile */
+.mobile-menu a[href="#servicos"] { color: rgba(255,255,255,.8); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ── 28. WHATSAPP FLUTUANTE ──
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 5.5rem;   /* acima do back-top */
+  right: 1.5rem;
+  z-index: 500;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: transform .3s, box-shadow .3s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 28px rgba(37,211,102,.6);
+}
+/* Pulso de atenção */
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.4);
+  animation: waPulse 2.5s ease infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  70%  { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+/* No desktop, esconde o WhatsApp flutuante (já tem o CTA no navbar) */
+@media (min-width: 1024px) {
+  .whatsapp-float { display: none; }
+}
