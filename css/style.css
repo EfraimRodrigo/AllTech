@@ -1255,3 +1255,37 @@ textarea:focus-visible {
 @media (min-width: 1024px) {
   .whatsapp-float { display: none; }
 }
+
+/* ── 29. MAPA GOOGLE MAPS (contato) ── */
+.mapa-wrapper {
+  position: relative;
+  overflow: hidden;
+  line-height: 0; /* remove gap abaixo do iframe */
+}
+.mapa-wrapper iframe {
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter .3s;
+}
+.mapa-wrapper:hover iframe {
+  filter: grayscale(0%) contrast(1);
+}
+.sede-box-footer {
+  display: flex;
+  align-items: center;
+  padding: .85rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.mapa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--cyan);
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap .2s, opacity .2s;
+}
+.mapa-link:hover {
+  gap: .6rem;
+  opacity: .85;
+}
