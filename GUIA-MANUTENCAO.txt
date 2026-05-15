@@ -1,0 +1,627 @@
+================================================================================
+  ALLTECH — GUIA COMPLETO DE MANUTENÇÃO E PERSONALIZAÇÃO
+  Documento de referência para ajustes futuros
+  Gerado em: 14/05/2026
+================================================================================
+
+ÍNDICE
+------
+1.  ESTRUTURA DO PROJETO
+2.  CORES E IDENTIDADE VISUAL
+3.  LOADER (BARRA DE CARREGAMENTO)
+4.  TIPOGRAFIA
+5.  NAVEGAÇÃO E MENUS
+6.  IMAGENS E LOGOS
+7.  FORMULÁRIO DE CONTATO (EmailJS)
+8.  ANALYTICS (Google Analytics + Microsoft Clarity)
+9.  CHAT AO VIVO (Tawk.to)
+10. REDES SOCIAIS
+11. SEO E META TAGS
+12. CONTEÚDO — TEXTOS E DADOS DA EMPRESA
+13. BLOG — ADICIONAR ARTIGOS
+14. CASES — ADICIONAR NOVOS CASES
+15. VAGAS — TRABALHE CONOSCO
+16. BACKUPS
+17. DEPLOY / PUBLICAÇÃO
+18. CHECKLIST PRÉ-LANÇAMENTO
+
+
+================================================================================
+1. ESTRUTURA DO PROJETO
+================================================================================
+
+site/
+├── index.html                  → Página inicial
+├── sumerios-barber.html        → Produto: Sumérios Barber
+├── sumerios-retail.html        → Produto: Sumérios Retail
+├── sumerios-crm.html           → Produto: Sumérios CRM
+├── sumerios-commerce.html      → Produto: Sumérios Commerce
+├── zapp.html                   → Produto: Zapp
+├── quem-somos.html             → Institucional: Quem Somos
+├── cases.html                  → Cases de Sucesso
+├── blog.html                   → Blog / Artigos
+├── contato.html                → Formulário de Contato
+├── trabalhe-conosco.html       → Carreiras / Vagas
+├── privacidade.html            → Política de Privacidade
+├── termos.html                 → Termos de Uso
+├── css/
+│   └── style.css               → TODO o CSS do projeto
+├── js/
+│   ├── main.js                 → Animações GSAP + interatividade
+│   ├── emailjs-config.js       → Configuração do formulário de contato
+│   ├── analytics-config.js     → Configuração do Google Analytics e Clarity
+│   └── chat-config.js          → Configuração do chat Tawk.to
+├── assets/
+│   ├── logo.png / logo.webp    → Logo da empresa
+│   ├── favicon.svg / favicon.png → Ícone da aba do browser
+│   ├── hero-visual.png/.webp   → Imagem principal do hero
+│   ├── hero-visual-480.webp    → Hero responsivo 480px
+│   ├── hero-visual-768.webp    → Hero responsivo 768px
+│   ├── hero-visual-1024.webp   → Hero responsivo 1024px
+│   ├── dashboard-preview.png/.webp → Preview Sumérios Retail
+│   ├── crm-preview.png/.webp   → Preview Sumérios CRM
+│   ├── commerce-preview.png/.webp → Preview Sumérios Commerce
+│   ├── zapp-preview.png/.webp  → Preview Zapp
+│   └── office-view.png/.webp   → Foto do escritório
+├── sitemap.xml                 → Mapa do site para Google
+├── robots.txt                  → Instruções para robôs de busca
+└── seo-config.json             → Configuração centralizada de SEO
+
+
+================================================================================
+2. CORES E IDENTIDADE VISUAL
+================================================================================
+
+Todas as cores estão em css/style.css, seção ":root" (linhas ~25-50).
+
+CORES PRINCIPAIS:
+  --navy:       #002B49   → Azul escuro (fundo de seções, navbar)
+  --navy-deep:  #001C30   → Azul muito escuro (fundo do mobile menu, footer)
+  --cyan:       #00A4CC   → Ciano (cor de destaque, botões, links)
+  --dark:       #060B17   → Quase preto (fundo principal das páginas)
+  --dark-card:  #0D1525   → Fundo dos cards escuros
+
+COMO ALTERAR A COR DE DESTAQUE (ciano):
+  1. Abra css/style.css
+  2. Localize "--cyan: #00A4CC;"
+  3. Substitua #00A4CC pela nova cor
+  4. Faça o mesmo para "--cyan-light" e "--cyan-glow" (versões mais claras)
+
+EXEMPLO — mudar para verde:
+  --cyan:       #00CC88;
+  --cyan-light: #33E0A0;
+  --cyan-glow:  rgba(0,204,136,0.2);
+
+
+================================================================================
+3. LOADER (BARRA DE CARREGAMENTO)
+================================================================================
+
+O loader aparece ao abrir cada página — barra fina que cresce + texto.
+
+ONDE ESTÁ:
+  Cada página HTML tem um bloco <style> no <head> com o CSS do loader,
+  e um bloco <script> no final do <body> com o JS do loader.
+
+COMO AJUSTAR A VELOCIDADE:
+  No bloco <style> de cada página, localize:
+    animation: loaderGrow 1.4s ...   → tempo da barra crescer (padrão: 1.4s)
+    animation: loaderFade 1s ...     → tempo do texto aparecer (padrão: 1s)
+
+  No bloco <script> do loader, localize:
+    setTimeout(function(){ ... }, 1200);  → tempo antes de sumir (padrão: 1200ms)
+
+COMO ALTERAR O TEXTO:
+  Em cada página, localize:
+    <span class="loader-text">NOME DA PÁGINA</span>
+  
+  Textos atuais por página:
+    index.html              → ALLTECH
+    sumerios-barber.html    → SUMÉRIOS BARBER
+    sumerios-retail.html    → SUMÉRIOS RETAIL
+    sumerios-crm.html       → SUMÉRIOS CRM
+    sumerios-commerce.html  → SUMÉRIOS COMMERCE
+    zapp.html               → ZAPP
+    cases.html              → CASES
+    blog.html               → BLOG
+    contato.html            → CONTATO
+    quem-somos.html         → QUEM SOMOS
+    trabalhe-conosco.html   → CARREIRAS
+    privacidade.html        → PRIVACIDADE
+    termos.html             → TERMOS
+
+COMO DESATIVAR O LOADER em uma página:
+  Remova o bloco <!-- PREMIUM LOADER --> do HTML
+  e o bloco <!-- LOADER JS --> do final do body.
+
+COMO ALTERAR A COR DA BARRA:
+  No bloco <style>, localize:
+    .loader-line { background: #00A4CC; ... }
+  Substitua #00A4CC pela cor desejada.
+
+
+================================================================================
+4. TIPOGRAFIA
+================================================================================
+
+O projeto usa duas fontes do Google Fonts:
+  - Inter (corpo do texto) — pesos: 300, 400, 500, 600, 700, 800, 900
+  - Syne (títulos e logo) — pesos: 700, 800
+
+COMO ALTERAR OS TAMANHOS DOS TÍTULOS:
+  Em css/style.css, seção "── 3. TYPOGRAPHY ──":
+    h1 { font-size: clamp(2rem, 4.5vw, 3.8rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+    h3 { font-size: clamp(1.1rem, 1.8vw, 1.35rem); }
+
+  O formato clamp(mínimo, fluido, máximo) define:
+    - mínimo: tamanho em mobile
+    - fluido: escala com a largura da tela
+    - máximo: tamanho em desktop
+
+COMO TROCAR A FONTE:
+  1. Escolha uma fonte em fonts.google.com
+  2. Em cada HTML, substitua o link do Google Fonts no <head>
+  3. Em css/style.css, atualize:
+     body { font-family: 'NovaNome', sans-serif; }
+     h1, h2, h3 { font-family: 'NovaNome', sans-serif; }
+
+
+================================================================================
+5. NAVEGAÇÃO E MENUS
+================================================================================
+
+ESTRUTURA DO NAVBAR (desktop):
+  Início → Soluções (dropdown) → Segmentos → Quem Somos → Cases → [Falar com Consultor]
+
+COMO ADICIONAR UM LINK NO NAVBAR:
+  Em TODAS as páginas HTML, localize o bloco <div class="nav-links">
+  e adicione antes do botão .nav-cta:
+    <a href="nova-pagina.html">Nome do Link</a>
+
+COMO ADICIONAR UM PRODUTO NO DROPDOWN:
+  Em TODAS as páginas, dentro de <div class="nav-dropdown-menu">, adicione:
+    <a href="novo-produto.html">Nome do Produto</a>
+  
+  Faça o mesmo no mobile menu <div class="mobile-menu">,
+  dentro da seção "Soluções".
+
+MOBILE MENU:
+  O menu mobile é controlado por um script inline no final de cada página.
+  Ele adiciona/remove a classe .open no elemento #mobile-menu.
+  O CSS em style.css controla a animação (transform: translateX).
+
+
+================================================================================
+6. IMAGENS E LOGOS
+================================================================================
+
+LOGO:
+  Arquivo: assets/logo.png (212KB) e assets/logo.webp (35KB — use este)
+  Tamanho no navbar: height: 68px (definido em css/style.css → .nav-logo-img)
+  Tamanho no footer: height: 80px (definido em css/style.css → .footer-logo-img)
+
+COMO TROCAR O LOGO:
+  1. Substitua assets/logo.png e assets/logo.webp pelos novos arquivos
+  2. Mantenha os mesmos nomes de arquivo
+  3. Se mudar o tamanho, ajuste height em .nav-logo-img e .footer-logo-img
+
+FAVICON:
+  Arquivo: assets/favicon.svg (ícone "AT" azul) e assets/favicon.png
+  Para criar um favicon real:
+    1. Crie uma imagem 32x32px com o ícone da empresa
+    2. Salve como assets/favicon.png
+    3. O favicon.svg é o fallback — pode manter ou substituir
+
+IMAGENS DE PRODUTO:
+  Sempre forneça DOIS arquivos para cada imagem:
+    - arquivo.png  → fallback para browsers antigos
+    - arquivo.webp → versão otimizada (use sempre que possível)
+  
+  O HTML usa <picture> para servir o WebP automaticamente:
+    <picture>
+      <source srcset="assets/imagem.webp" type="image/webp">
+      <img src="assets/imagem.png" alt="Descrição" ...>
+    </picture>
+
+HERO RESPONSIVO (index.html):
+  Existem 4 versões do hero para diferentes tamanhos de tela:
+    hero-visual-480.webp   → mobile (até 640px)
+    hero-visual-768.webp   → tablet (até 900px)
+    hero-visual-1024.webp  → desktop médio (até 1200px)
+    hero-visual.webp       → desktop grande (1200px+)
+  
+  Para trocar a imagem hero, substitua todos os 4 arquivos.
+
+
+================================================================================
+7. FORMULÁRIO DE CONTATO (EmailJS)
+================================================================================
+
+O formulário em contato.html está estruturado mas aguarda configuração.
+Quando tiver o domínio e quiser ativar o envio real:
+
+PASSO A PASSO:
+  1. Acesse https://www.emailjs.com/ e crie uma conta gratuita
+  2. Crie um "Email Service" (conecte seu Gmail ou outro)
+  3. Crie um "Email Template" com as variáveis:
+       {{from_name}}   → nome do contato
+       {{reply_to}}    → email do contato
+       {{phone}}       → whatsapp
+       {{interest}}    → solução de interesse
+       {{message}}     → mensagem
+  4. Abra js/emailjs-config.js e preencha:
+       serviceId:  'service_XXXXXXX'   (do painel EmailJS)
+       templateId: 'template_XXXXXXX'  (do painel EmailJS)
+       publicKey:  'user_XXXXXXX'      (do painel EmailJS → Account)
+  5. Em contato.html, adicione no <head>:
+       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  6. Em js/main.js, na função initForms(), substitua o bloco de sucesso por:
+       emailjs.init(window.emailjsConfig.publicKey);
+       emailjs.sendForm(
+         window.emailjsConfig.serviceId,
+         window.emailjsConfig.templateId,
+         form
+       ).then(function(){ /* sucesso */ }, function(){ /* erro */ });
+
+CAMPOS DO FORMULÁRIO (contato.html):
+  id="nome"      → Seu Nome        (autocomplete="name")
+  id="email"     → E-mail          (autocomplete="email")
+  id="whatsapp"  → WhatsApp        (autocomplete="tel")
+  id="solucao"   → Solução         (select)
+  id="mensagem"  → Mensagem        (textarea)
+
+
+================================================================================
+8. ANALYTICS (Google Analytics + Microsoft Clarity)
+================================================================================
+
+Configuração em js/analytics-config.js
+
+GOOGLE ANALYTICS 4:
+  1. Acesse https://analytics.google.com/
+  2. Crie uma propriedade → Web → copie o Measurement ID (G-XXXXXXXXXX)
+  3. Em analytics-config.js, substitua:
+       measurementId: 'G-XXXXXXXXXX'  →  measurementId: 'G-SEU-ID-REAL'
+  4. Certifique-se que enabled: true
+
+MICROSOFT CLARITY (mapas de calor + gravações):
+  1. Acesse https://clarity.microsoft.com/
+  2. Crie um projeto → copie o Project ID (número)
+  3. Em analytics-config.js, substitua:
+       projectId: 'XXXXXXXXXX'  →  projectId: 'SEU-ID-REAL'
+  4. Certifique-se que enabled: true
+
+ATENÇÃO: O analytics só funciona quando o site estiver publicado em HTTPS.
+Localmente (file://) os scripts são carregados mas não enviam dados.
+
+PARA DESATIVAR TEMPORARIAMENTE:
+  Em analytics-config.js, mude enabled: false em qualquer serviço.
+
+
+================================================================================
+9. CHAT AO VIVO (Tawk.to)
+================================================================================
+
+Configuração em chat-config.js
+
+COMO ATIVAR:
+  1. Acesse https://www.tawk.to/ e crie uma conta gratuita
+  2. Crie uma propriedade → copie o Property ID e Widget ID
+  3. Em chat-config.js, substitua:
+       tawkId:   'SUBSTITUA_POR_SEU_TAWK_ID'    →  seu Property ID
+       widgetId: 'SUBSTITUA_POR_SEU_WIDGET_ID'  →  seu Widget ID
+  4. O chat aparece automaticamente em todas as páginas que carregam chat-config.js
+     (atualmente: privacidade.html e termos.html)
+  
+  Para adicionar em outras páginas, inclua antes do </body>:
+    <script src="chat-config.js"></script>
+    <script>
+    if(window.chatConfig && window.chatConfig.enabled && 
+       window.chatConfig.tawkId !== 'SUBSTITUA_POR_SEU_TAWK_ID'){
+      var Tawk_API=Tawk_API||{};
+      (function(){
+        var s=document.createElement("script"); s.async=true;
+        s.src='https://embed.tawk.to/'+window.chatConfig.tawkId+'/'+window.chatConfig.widgetId;
+        document.head.appendChild(s);
+      })();
+    }
+    </script>
+
+
+================================================================================
+10. REDES SOCIAIS
+================================================================================
+
+Os links das redes sociais estão no footer de todas as páginas.
+Atualmente apontam para "#" (placeholder).
+
+COMO ATUALIZAR:
+  Em TODAS as páginas HTML, localize o bloco <div class="footer-socials">
+  e substitua o href="#" pelo link real:
+
+  <a href="https://linkedin.com/company/alltech" aria-label="LinkedIn da AllTech">
+  <a href="https://instagram.com/alltech"        aria-label="Instagram da AllTech">
+  <a href="https://facebook.com/alltech"         aria-label="Facebook da AllTech">
+  <a href="https://youtube.com/@alltech"         aria-label="YouTube da AllTech">
+
+  Faça o mesmo em seo-config.json, seção "social":
+    "linkedin":  "https://linkedin.com/company/alltech",
+    "instagram": "https://instagram.com/alltech",
+    "facebook":  "https://facebook.com/alltech",
+    "youtube":   "https://youtube.com/@alltech"
+
+  E em index.html, no Schema.org (JSON-LD), atualize o array "sameAs":
+    "sameAs": [
+      "https://linkedin.com/company/alltech",
+      "https://instagram.com/alltech",
+      "https://facebook.com/alltech",
+      "https://youtube.com/@alltech"
+    ]
+
+
+================================================================================
+11. SEO E META TAGS
+================================================================================
+
+ONDE ESTÃO:
+  Cada página tem suas próprias meta tags no <head>.
+  O arquivo seo-config.json centraliza as configurações de referência.
+
+COMO ATUALIZAR O DOMÍNIO (quando tiver o domínio real):
+  1. Em seo-config.json, atualize "url": "https://alltech.com.br"
+  2. Em CADA página HTML, atualize:
+     - <link rel="canonical" href="https://alltech.com.br/PAGINA.html">
+     - <meta property="og:url" content="https://alltech.com.br/PAGINA.html">
+     - <meta property="og:image" content="https://alltech.com.br/assets/...">
+  3. Em sitemap.xml, atualize todas as <loc> com o domínio real
+  4. Em robots.txt, atualize a linha Sitemap:
+
+SITEMAP:
+  Arquivo: sitemap.xml
+  Atualizar o campo <lastmod> sempre que modificar uma página.
+  Formato: YYYY-MM-DD (ex: 2026-05-14)
+  
+  Após publicar, envie o sitemap ao Google:
+    https://search.google.com/search-console → Sitemaps → Adicionar sitemap
+
+SCHEMA.ORG (index.html):
+  Dois blocos JSON-LD no <head>:
+  - Organization: dados da empresa (nome, endereço, telefone, redes sociais)
+  - WebSite: nome e URL do site
+  
+  Atualize quando mudar endereço, telefone ou redes sociais.
+
+
+================================================================================
+12. CONTEÚDO — TEXTOS E DADOS DA EMPRESA
+================================================================================
+
+DADOS DE CONTATO (aparecem no footer e na página de contato):
+  Endereço: Rua Hungria, 14-A - Vila Bela, Franco da Rocha / SP
+  Telefone: (11) 97405-1804
+  E-mail:   alves.efraimrodrigo@gmail.com
+  
+  Para atualizar, faça busca global por esses valores em todos os HTMLs.
+  Dica: use Ctrl+Shift+H no VS Code para substituir em todos os arquivos.
+
+ESTATÍSTICAS DO HERO (index.html):
+  "20+ Anos de Experiência"  → data-count="20" data-suffix="+"
+  "250+ Empresas atendidas"  → data-count="250" data-suffix="+"
+  "24/7 Suporte técnico"     → data-count="24" data-suffix="/7"
+  
+  Para alterar, localize os elementos com data-count no index.html.
+
+DEPOIMENTOS (index.html):
+  Localize a seção id="depoimentos" no index.html.
+  Cada depoimento tem: estrelas, texto, avatar (iniciais), nome e cargo.
+  Para adicionar um novo, copie um bloco <div class="depo-card"> e edite.
+
+TIMELINE (quem-somos.html):
+  Localize a seção com class="timeline-wrap".
+  Cada item tem: ano, título e descrição.
+  Para adicionar um marco, copie um bloco <div class="tl-item"> e edite.
+
+
+================================================================================
+13. BLOG — ADICIONAR ARTIGOS
+================================================================================
+
+Os artigos estão em blog.html como cards estáticos.
+Quando quiser adicionar um novo artigo:
+
+1. Abra blog.html
+2. Localize a <div class="blog-grid">
+3. Copie um bloco <article class="blog-card"> existente
+4. Cole antes do primeiro artigo (para aparecer primeiro)
+5. Edite: tag de categoria, título, resumo, data e link
+
+EXEMPLO DE NOVO ARTIGO:
+  <article class="blog-card">
+    <div class="blog-card-body">
+      <span class="blog-card-tag">Categoria</span>
+      <h3>Título do Artigo</h3>
+      <p>Resumo do artigo em 2-3 linhas...</p>
+      <div class="blog-card-meta">
+        <span class="blog-card-date">📅 Jun 2026</span>
+        <a href="contato.html" class="blog-read-link">Ler artigo →</a>
+      </div>
+    </div>
+  </article>
+
+CATEGORIAS DISPONÍVEIS (para manter consistência):
+  Gestão | Fidelização | Fiscal | Barbearia | E-commerce | Tecnologia | Varejo
+
+PARA CRIAR PÁGINAS INDIVIDUAIS DE ARTIGOS:
+  Copie o template de qualquer página de produto (ex: sumerios-retail.html)
+  e adapte o conteúdo. Atualize o link no blog-card para apontar para a nova página.
+
+
+================================================================================
+14. CASES — ADICIONAR NOVOS CASES
+================================================================================
+
+Os cases estão em cases.html.
+Para adicionar um novo case:
+
+1. Abra cases.html
+2. Localize a <div class="cases-grid">
+3. Copie um bloco <div class="case-card glass-card"> existente
+4. Edite: iniciais do logo, nome da empresa, segmento, descrição e métricas
+
+ESTRUTURA DE UM CASE:
+  - Logo placeholder (2 letras iniciais)
+  - Nome da empresa + segmento
+  - Descrição do projeto (1-2 linhas)
+  - 3 métricas com valor e label (ex: +15% / Redução de Perdas)
+  - Link para detalhes (pode apontar para contato.html ou página própria)
+
+MÉTRICAS SUGERIDAS:
+  Agilidade | Redução de Perdas | Retenção | Ticket Médio | Faturamento
+  Clientes | Economia | Uptime | Satisfação | ROI
+
+
+================================================================================
+15. VAGAS — TRABALHE CONOSCO
+================================================================================
+
+As vagas estão em trabalhe-conosco.html.
+Para adicionar ou editar uma vaga:
+
+1. Abra trabalhe-conosco.html
+2. Localize a <div class="vagas-grid">
+3. Copie um bloco <div class="vaga-card glass-card"> existente
+4. Edite: área, tipo (Remoto/Híbrido/Presencial), título e descrição
+
+TIPOS DE VAGA DISPONÍVEIS:
+  .vaga-area  → área (Tecnologia, Comercial, Suporte, Marketing, etc.)
+  .vaga-tipo  → modalidade (Remoto, Híbrido, Presencial)
+
+PARA REMOVER UMA VAGA:
+  Simplesmente delete o bloco <div class="vaga-card"> correspondente.
+
+CANDIDATURA ESPONTÂNEA:
+  O bloco .candidatura-box no final da seção de vagas sempre aparece.
+  O botão "Enviar Currículo" aponta para contato.html.
+  Quando tiver o EmailJS configurado, pode criar um formulário específico.
+
+
+================================================================================
+16. BACKUPS
+================================================================================
+
+LOCALIZAÇÃO DOS BACKUPS:
+  C:\Desenvolvimento\Projeto_Alltech\alltech\backups\
+
+BACKUPS CRIADOS DURANTE O PROJETO:
+  backup_2026-05-14_18-55  → Antes da Etapa 1 (SEO)
+  backup_2026-05-14_19-04  → Antes do rebranding Zeus → Sumérios
+  backup_2026-05-14_19-09  → Antes da Etapa 2 (Navegação)
+  backup_2026-05-14_19-20  → Antes das correções mobile Sumérios Barber
+  backup_2026-05-14_19-27  → Antes das correções de menu mobile
+  backup_2026-05-14_20-57  → Antes da correção definitiva do menu
+  backup_2026-05-14_21-11  → Antes do loader em todas as páginas
+  backup_2026-05-14_21-15  → Antes da Etapa 3 (Performance)
+  backup_2026-05-14_21-30  → Antes das correções visuais (logo, contato)
+  backup_2026-05-14_22-26  → Antes da Etapa 4 (CSS cleanup)
+  backup_2026-05-14_22-36  → Antes do link Início no navbar
+  backup_2026-05-14_23-05  → Antes da Etapa 5 (Acessibilidade)
+  backup_2026-05-14_23-25  → Antes da Etapa 6 (Conteúdo)
+
+COMO RESTAURAR UM BACKUP:
+  1. Abra o Explorer em C:\Desenvolvimento\Projeto_Alltech\alltech\backups\
+  2. Escolha o backup pela data/hora
+  3. Copie o conteúdo da pasta do backup
+  4. Cole em C:\Desenvolvimento\Projeto_Alltech\alltech\site\
+  5. Confirme a substituição dos arquivos
+
+COMO CRIAR UM NOVO BACKUP MANUALMENTE (PowerShell):
+  $ts = Get-Date -Format "yyyy-MM-dd_HH-mm"
+  $dst = "C:\Desenvolvimento\Projeto_Alltech\alltech\backups\backup_$ts"
+  New-Item -ItemType Directory -Path $dst -Force
+  Copy-Item -Path "C:\Desenvolvimento\Projeto_Alltech\alltech\site\*" -Destination $dst -Recurse -Force
+  Write-Host "Backup criado: $dst"
+
+
+================================================================================
+17. DEPLOY / PUBLICAÇÃO
+================================================================================
+
+O site é estático (HTML + CSS + JS puro) — pode ser hospedado em qualquer lugar.
+
+OPÇÕES RECOMENDADAS:
+
+1. VERCEL (gratuito, mais fácil):
+   - Acesse vercel.com → New Project
+   - Conecte ao GitHub ou faça upload da pasta site/
+   - Deploy automático em segundos
+   - Domínio gratuito: seusite.vercel.app
+   - Para domínio próprio: Settings → Domains → Add
+
+2. NETLIFY (gratuito, similar ao Vercel):
+   - Acesse netlify.com → Add new site → Deploy manually
+   - Arraste a pasta site/ para a área de upload
+   - Domínio gratuito: seusite.netlify.app
+
+3. GITHUB PAGES (gratuito):
+   - Crie um repositório no GitHub
+   - Faça upload dos arquivos
+   - Settings → Pages → Source: main branch
+
+4. HOSPEDAGEM TRADICIONAL (cPanel, etc.):
+   - Faça upload via FTP para a pasta public_html/
+   - Use FileZilla ou o gerenciador de arquivos do cPanel
+
+APÓS PUBLICAR:
+  1. Atualize o domínio em todos os canonical e og:url (ver seção 11)
+  2. Configure o Google Analytics com o domínio real
+  3. Envie o sitemap ao Google Search Console
+  4. Teste o formulário de contato com EmailJS
+  5. Ative o chat Tawk.to se desejar
+
+
+================================================================================
+18. CHECKLIST PRÉ-LANÇAMENTO
+================================================================================
+
+CONTEÚDO:
+  [ ] Dados de contato atualizados (endereço, telefone, e-mail)
+  [ ] Redes sociais com links reais (não mais "#")
+  [ ] Depoimentos com clientes reais (ou remover os fictícios)
+  [ ] Cases com empresas reais e métricas verificadas
+  [ ] Vagas atualizadas (remover as que não existem)
+  [ ] Blog com artigos reais (ou manter os placeholders)
+
+TÉCNICO:
+  [ ] Domínio configurado e apontando para o servidor
+  [ ] HTTPS ativo (obrigatório para analytics e formulário)
+  [ ] Canonical URLs atualizadas com o domínio real
+  [ ] Sitemap enviado ao Google Search Console
+  [ ] Google Analytics configurado (analytics-config.js)
+  [ ] Microsoft Clarity configurado (analytics-config.js)
+  [ ] EmailJS configurado e testado (emailjs-config.js)
+  [ ] Favicon real criado (assets/favicon.png)
+  [ ] Imagem OG real criada (1200x630px para compartilhamento social)
+
+TESTES:
+  [ ] Testar em Chrome, Firefox, Safari e Edge
+  [ ] Testar em iPhone (Safari mobile)
+  [ ] Testar em Android (Chrome mobile)
+  [ ] Verificar que o menu mobile abre e fecha corretamente
+  [ ] Verificar que o formulário de contato envia e-mail
+  [ ] Verificar que todas as páginas carregam sem erro 404
+  [ ] Testar o loader em todas as páginas
+  [ ] Verificar imagens WebP carregando (aba Network no DevTools)
+
+SEO:
+  [ ] Validar Schema.org: https://validator.schema.org/
+  [ ] Validar meta tags OG: https://metatags.io/
+  [ ] Verificar velocidade: https://pagespeed.web.dev/
+  [ ] Verificar acessibilidade: https://wave.webaim.org/
+
+
+================================================================================
+  FIM DO DOCUMENTO
+  AllTech Tecnologia — Tecnologia de Resultados
+  Documento gerado em 14/05/2026
+================================================================================

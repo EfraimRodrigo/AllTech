@@ -1,0 +1,103 @@
+﻿{
+  "site": {
+    "name": "AllTech Tecnologia",
+    "url": "https://alltech.com.br",
+    "description": "Líder em soluções de automação comercial com mais de 20 anos de expertise. Tecnologia brasileira feita para resultados reais.",
+    "keywords": ["automação comercial", "software para varejo", "PDV", "ERP", "gestão empresarial", "Sumérios Barber", "AllTech"],
+    "logo": "/assets/logo.png",
+    "heroImage": "/assets/hero-visual.png",
+    "contact": {
+      "phone": "+55-11-97405-1804",
+      "email": "alves.efraimrodrigo@gmail.com",
+      "address": "Rua Hungria, 14-A - Vila Bela, Franco da Rocha / SP"
+    }
+  },
+  "social": {
+    "linkedin": "#",
+    "instagram": "#",
+    "facebook": "#",
+    "youtube": "#"
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "path": "index.html",
+      "title": "AllTech — Tecnologia de Resultados | Automação Comercial",
+      "description": "Aumente a eficiência do seu negócio com as soluções de automação comercial da AllTech. Mais de 20 anos de expertise em tecnologia para varejo.",
+      "ogImage": "/assets/hero-visual.png",
+      "type": "website"
+    },
+    {
+      "name": "Sumérios Barber",
+      "path": "sumerios-barber.html",
+      "title": "Sumérios Barber | Sistema Completo para Barbearias | AllTech",
+      "description": "O sistema mais completo do mercado para barbearias. Agendamento online, comissionamento automático, carteira digital e gestão 100% integrada.",
+      "ogImage": "/assets/hero-visual.png",
+      "type": "product"
+    },
+    {
+      "name": "Sumérios Retail",
+      "path": "sumerios-retail.html",
+      "title": "Sumérios Retail | Sistema de Gestão para Supermercados | AllTech",
+      "description": "Sistema completo de gestão para supermercados, lojas e comércio em geral. Controle total de estoque, vendas e finanças.",
+      "ogImage": "/assets/dashboard-preview.png",
+      "type": "product"
+    },
+    {
+      "name": "Sumérios CRM",
+      "path": "sumerios-crm.html",
+      "title": "Sumérios CRM | Sistema de Fidelização de Clientes | AllTech",
+      "description": "Sistema de fidelização e inteligência de clientes para qualquer segmento. Aumente a recorrência e conheça seu público.",
+      "ogImage": "/assets/crm-preview.png",
+      "type": "product"
+    },
+    {
+      "name": "Sumérios Commerce",
+      "path": "sumerios-commerce.html",
+      "title": "Sumérios Commerce | E-commerce Omnichannel | AllTech",
+      "description": "E-commerce omnichannel totalmente integrado. Venda online e sincronize estoque, pedidos e clientes em tempo real.",
+      "ogImage": "/assets/commerce-preview.png",
+      "type": "product"
+    },
+    {
+      "name": "Zapp",
+      "path": "zapp.html",
+      "title": "Zapp | App White-label para Varejo | AllTech",
+      "description": "Aplicativo white-label completo para varejo. Agendamento, fidelidade e pagamentos integrados ao ERP.",
+      "ogImage": "/assets/zapp-preview.png",
+      "type": "product"
+    },
+    {
+      "name": "Quem Somos",
+      "path": "quem-somos.html",
+      "title": "Quem Somos — 20 Anos de Expertise | AllTech Tecnologia",
+      "description": "Conheça a AllTech: mais de 20 anos de expertise em automação comercial. Nossa história, missão, valores e equipe.",
+      "ogImage": "/assets/office-view.png",
+      "type": "about"
+    },
+    {
+      "name": "Cases",
+      "path": "cases.html",
+      "title": "Cases de Sucesso | AllTech",
+      "description": "Descubra como empresas transformaram seus negócios com as soluções AllTech. Cases reais, resultados mensuráveis.",
+      "ogImage": "/assets/dashboard-preview.png",
+      "type": "article"
+    },
+    {
+      "name": "Blog",
+      "path": "blog.html",
+      "title": "Blog | AllTech Tecnologia",
+      "description": "Artigos, dicas e insights sobre automação comercial, gestão de varejo e inovação tecnológica.",
+      "ogImage": "/assets/office-view.png",
+      "type": "blog"
+    },
+    {
+      "name": "Contato",
+      "path": "contato.html",
+      "title": "Fale com um Especialista | AllTech",
+      "description": "Preencha o formulário e um consultor sênior entrará em contato em até 24h. Solicite uma demonstração personalizada.",
+      "ogImage": "/assets/logo.png",
+      "type": "contact"
+    }
+  ]
+}

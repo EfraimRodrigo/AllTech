@@ -1,0 +1,49 @@
+# ============================================================
+#  AllTech — .gitignore
+# ============================================================
+
+# Dependencias
+node_modules/
+npm-debug.log*
+
+# Build
+dist/
+build/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ⚠️  CONFIGS SENSIVEIS — NAO versionar (preencher localmente)
+js/emailjs-config.js
+js/analytics-config.js
+js/chat-config.js
+*.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Temporarios
+*.tmp
+*.temp
+.sass-cache/
+
+# Arquivos de teste criados durante desenvolvimento
+teste-menu.html
+teste-menu2.html
+
+# Scripts de otimizacao (uso local apenas)
+optimize-images.py
+
+# Pasta ebook (vazia)
+ebook/
