@@ -1289,3 +1289,217 @@ textarea:focus-visible {
   gap: .6rem;
   opacity: .85;
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ── 30. BOTÕES FLUTUANTES DE CONTATO ──
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Container principal */
+.float-contact {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 600;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: .75rem;
+}
+
+/* Botão principal — toggle */
+.float-toggle {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,164,204,.45);
+  transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s, background .3s;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.float-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(0,164,204,.6);
+}
+.float-toggle svg {
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.float-contact.open .float-toggle {
+  background: var(--navy);
+  box-shadow: 0 4px 20px rgba(0,27,48,.5);
+}
+.float-contact.open .float-toggle svg {
+  transform: rotate(45deg);
+}
+
+/* Grupo de botões filhos */
+.float-items {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: .65rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+  pointer-events: none;
+}
+.float-contact.open .float-items {
+  max-height: 300px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Cada botão filho */
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+.float-btn-icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 14px rgba(0,0,0,.25);
+  transition: transform .25s, box-shadow .25s;
+  flex-shrink: 0;
+}
+.float-btn:hover .float-btn-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+.float-btn-label {
+  background: var(--navy-deep);
+  color: white;
+  font-size: .75rem;
+  font-weight: 600;
+  padding: .3rem .75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity .25s, transform .25s;
+}
+.float-contact.open .float-btn-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Delay escalonado nos labels */
+.float-contact.open .float-items .float-btn:nth-child(1) .float-btn-label { transition-delay: .05s; }
+.float-contact.open .float-items .float-btn:nth-child(2) .float-btn-label { transition-delay: .1s; }
+.float-contact.open .float-items .float-btn:nth-child(3) .float-btn-label { transition-delay: .15s; }
+
+/* Cores dos ícones */
+.float-btn-wa    .float-btn-icon { background: #25D366; color: white; }
+.float-btn-ig    .float-btn-icon { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: white; }
+.float-btn-email .float-btn-icon { background: var(--navy); color: var(--cyan); border: 1.5px solid rgba(0,164,204,.3); }
+
+/* Pulso no toggle quando fechado */
+.float-toggle::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,164,204,.35);
+  animation: floatPulse 2.8s ease infinite;
+}
+.float-contact.open .float-toggle::before { display: none; }
+@keyframes floatPulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  70%  { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* ── MODAL DE EMAIL ── */
+.email-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+.email-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+.email-modal {
+  background: var(--navy-deep);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  transform: translateY(20px) scale(.97);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.email-modal-overlay.open .email-modal {
+  transform: translateY(0) scale(1);
+}
+.email-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.email-modal-header h3 {
+  color: white;
+  font-size: 1.15rem;
+  margin: 0;
+}
+.email-modal-close {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.07);
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray-400);
+  transition: background .2s, color .2s;
+}
+.email-modal-close:hover { background: rgba(255,255,255,.12); color: white; }
+
+.email-modal .form-group { margin-bottom: 1rem; }
+.email-modal .label-white { color: rgba(255,255,255,.75); font-size: .82rem; font-weight: 600; display: block; margin-bottom: .35rem; }
+.email-modal .input-dark {
+  width: 100%; padding: .7rem 1rem;
+  background: rgba(255,255,255,.06);
+  border: 1.5px solid rgba(255,255,255,.1);
+  border-radius: var(--radius-sm);
+  color: white; font-family: inherit; font-size: .9rem;
+  outline: none; transition: border-color .2s;
+}
+.email-modal .input-dark:focus { border-color: var(--cyan); }
+.email-modal .input-dark::placeholder { color: rgba(255,255,255,.3); }
+.email-modal textarea.input-dark { resize: vertical; min-height: 100px; }
+
+.email-modal-status {
+  font-size: .85rem;
+  text-align: center;
+  margin-top: .75rem;
+  min-height: 1.2rem;
+  font-weight: 600;
+}
+.email-modal-status.success { color: #22C55E; }
+.email-modal-status.error   { color: #EF4444; }
+
+/* Remover o whatsapp-float antigo (substituído pelo sistema unificado) */
+.whatsapp-float { display: none !important; }
