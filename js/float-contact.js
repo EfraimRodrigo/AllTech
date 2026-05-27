@@ -15,7 +15,7 @@
       publicKey:  'user_xxx'           /* ← EmailJS Public Key    */
     },
     /* Mensagem padrão do WhatsApp */
-    waMessage: 'Olá! Gostaria de saber mais sobre as soluções AllTech.'
+    waMessage: window.alltechWaMessage || 'Olá! Gostaria de saber mais sobre as soluções AllTech.'
   };
 
   /* ── HTML do sistema flutuante ── */
@@ -195,6 +195,12 @@
       submitBtn.textContent = 'Enviando...';
       submitBtn.disabled = true;
 
+      /* Mapeamento de Conversões: Captura a origem da página e adiciona à mensagem */
+      var msgField = form.querySelector('[name="message"]');
+      var originalMsg = msgField.value;
+      var pageTitle = document.title.split('|')[0].trim();
+      msgField.value = originalMsg + '\n\n---\nOrigem do Lead: ' + pageTitle;
+
       if (typeof emailjs !== 'undefined') {
         emailjs.init(cfg.publicKey);
         emailjs.sendForm(cfg.serviceId, cfg.templateId, form)
@@ -207,6 +213,7 @@
           .catch(function () {
             status.textContent = '✗ Erro ao enviar. Tente pelo WhatsApp.';
             status.className = 'email-modal-status error';
+            msgField.value = originalMsg; /* Restaura a mensagem para não exibir a tag de origem pro usuário */
           })
           .finally(function () {
             submitBtn.textContent = 'Enviar mensagem';
@@ -215,6 +222,7 @@
       } else {
         status.textContent = '✗ Serviço indisponível. Tente pelo WhatsApp.';
         status.className = 'email-modal-status error';
+        msgField.value = originalMsg;
         submitBtn.textContent = 'Enviar mensagem';
         submitBtn.disabled = false;
       }

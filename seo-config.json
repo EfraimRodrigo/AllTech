@@ -2,8 +2,8 @@
   "site": {
     "name": "AllTech Tecnologia",
     "url": "https://alltech.com.br",
-    "description": "Líder em soluções de automação comercial com mais de 20 anos de experiência. Tecnologia brasileira feita para resultados reais.",
-    "keywords": ["automação comercial", "software para varejo", "PDV", "ERP", "gestão empresarial", "Sumérios Barber", "AllTech"],
+    "description": "Lider em solucoes de automacao comercial com mais de 20 anos de experiencia. Tecnologia brasileira feita para resultados reais.",
+    "keywords": ["automacao comercial", "software para varejo", "PDV", "ERP", "gestao empresarial", "Sumerios Barber", "AllTech"],
     "logo": "/assets/logo.png",
     "heroImage": "/assets/hero-visual.png",
     "contact": {
@@ -13,48 +13,48 @@
     }
   },
   "social": {
-    "linkedin": "#",
-    "instagram": "#",
-    "facebook": "#",
-    "youtube": "#"
+    "linkedin": "TODO: https://linkedin.com/company/alltech-tecnologia",
+    "instagram": "TODO: https://instagram.com/alltech.tecnologia",
+    "facebook": "TODO: https://facebook.com/alltechbr",
+    "youtube": "TODO: https://youtube.com/@alltech"
   },
   "pages": [
     {
       "name": "Home",
       "path": "index.html",
-      "title": "AllTech — Tecnologia de Resultados | Automação Comercial",
-      "description": "Aumente a eficiência do seu negócio com as soluções de automação comercial da AllTech. Mais de 20 anos de experiência em tecnologia para varejo.",
+      "title": "AllTech — Tecnologia de Resultados | Automacao Comercial",
+      "description": "Aumente a eficiencia do seu negocio com as solucoes de automacao comercial da AllTech. Mais de 20 anos de experiencia em tecnologia para varejo.",
       "ogImage": "/assets/hero-visual.png",
       "type": "website"
     },
     {
-      "name": "Sumérios Barber",
+      "name": "Sumerios Barber",
       "path": "sumerios-barber.html",
-      "title": "Sumérios Barber | Sistema Completo para Barbearias | AllTech",
-      "description": "O sistema mais completo do mercado para barbearias. Agendamento online, comissionamento automático, carteira digital e gestão 100% integrada.",
+      "title": "Sumerios Barber | Sistema Completo para Barbearias | AllTech",
+      "description": "O sistema mais completo do mercado para barbearias. Agendamento online, comissionamento automatico, carteira digital e gestao 100% integrada.",
       "ogImage": "/assets/hero-visual.png",
       "type": "product"
     },
     {
-      "name": "Sumérios Retail",
+      "name": "Sumerios Retail",
       "path": "sumerios-retail.html",
-      "title": "Sumérios Retail | Sistema de Gestão para Supermercados | AllTech",
-      "description": "Sistema completo de gestão para supermercados, lojas e comércio em geral. Controle total de estoque, vendas e finanças.",
+      "title": "Sumerios Retail | ERP e PDV para Varejo | AllTech",
+      "description": "Sistema completo de gestao para supermercados, lojas e comercio em geral. Controle total de estoque, vendas e financas.",
       "ogImage": "/assets/dashboard-preview.png",
       "type": "product"
     },
     {
-      "name": "Sumérios CRM",
+      "name": "Sumerios CRM",
       "path": "sumerios-crm.html",
-      "title": "Sumérios CRM | Sistema de Fidelização de Clientes | AllTech",
-      "description": "Sistema de fidelização e inteligência de clientes para qualquer segmento. Aumente a recorrência e conheça seu público.",
+      "title": "Sumerios CRM | Sistema de Fidelizacao de Clientes | AllTech",
+      "description": "Sistema de fidelizacao e inteligencia de clientes para qualquer segmento. Aumente a recorrencia e conheca seu publico.",
       "ogImage": "/assets/crm-preview.png",
       "type": "product"
     },
     {
-      "name": "Sumérios Commerce",
+      "name": "Sumerios Commerce",
       "path": "sumerios-commerce.html",
-      "title": "Sumérios Commerce | E-commerce Multicanal | AllTech",
+      "title": "Sumerios Commerce | E-commerce Multicanal | AllTech",
       "description": "E-commerce multicanal totalmente integrado. Venda online e sincronize estoque, pedidos e clientes em tempo real.",
       "ogImage": "/assets/commerce-preview.png",
       "type": "product"
@@ -62,7 +62,7 @@
     {
       "name": "Zapp",
       "path": "zapp.html",
-      "title": "Zapp | App Marca Própria para Varejo | AllTech",
+      "title": "Zapp | App Marca Propria para Varejo | AllTech",
       "description": "Aplicativo white-label completo para varejo. Agendamento, fidelidade e pagamentos integrados ao ERP.",
       "ogImage": "/assets/zapp-preview.png",
       "type": "product"
@@ -70,16 +70,16 @@
     {
       "name": "Quem Somos",
       "path": "quem-somos.html",
-      "title": "Quem Somos — 20 Anos de Experiência | AllTech Tecnologia",
-      "description": "Conheça a AllTech: mais de 20 anos de experiência em automação comercial. Nossa história, missão, valores e equipe.",
+      "title": "Quem Somos — 20 Anos de Experiencia | AllTech Tecnologia",
+      "description": "Conheca a AllTech: mais de 20 anos de experiencia em automacao comercial. Nossa historia, missao, valores e equipe.",
       "ogImage": "/assets/office-view.png",
       "type": "about"
     },
     {
       "name": "Cases",
       "path": "cases.html",
-      "title": "Histórias de Sucesso | AllTech",
-      "description": "Descubra como empresas transformaram seus negócios com as soluções AllTech. Cases reais, resultados mensuráveis.",
+      "title": "Historias de Sucesso | AllTech",
+      "description": "Descubra como empresas transformaram seus negocios com as solucoes AllTech. Cases reais, resultados mensuraveis.",
       "ogImage": "/assets/dashboard-preview.png",
       "type": "article"
     },
@@ -87,7 +87,7 @@
       "name": "Blog",
       "path": "blog.html",
       "title": "Blog | AllTech Tecnologia",
-      "description": "Artigos, dicas e conteúdo sobre automação comercial, gestão de varejo e inovação tecnológica.",
+      "description": "Artigos, dicas e conteudo sobre automacao comercial, gestao de varejo e inovacao tecnologica.",
       "ogImage": "/assets/office-view.png",
       "type": "blog"
     },
@@ -95,9 +95,33 @@
       "name": "Contato",
       "path": "contato.html",
       "title": "Fale com um Especialista | AllTech",
-      "description": "Preencha o formulário e um consultor sênior entrará em contato em até 24h. Solicite uma demonstração personalizada.",
+      "description": "Preencha o formulario e um consultor senior entrara em contato em ate 24h. Solicite uma demonstracao personalizada.",
       "ogImage": "/assets/logo.png",
       "type": "contact"
+    },
+    {
+      "name": "Trabalhe Conosco",
+      "path": "trabalhe-conosco.html",
+      "title": "Trabalhe Conosco | AllTech Tecnologia",
+      "description": "Faca parte do time AllTech. Veja as vagas abertas e candidate-se.",
+      "ogImage": "/assets/logo.png",
+      "type": "careers"
+    },
+    {
+      "name": "Privacidade",
+      "path": "privacidade.html",
+      "title": "Politica de Privacidade | AllTech",
+      "description": "Politica de privacidade e protecao de dados da AllTech Tecnologia.",
+      "ogImage": "/assets/logo.png",
+      "type": "legal"
+    },
+    {
+      "name": "Termos",
+      "path": "termos.html",
+      "title": "Termos de Uso | AllTech",
+      "description": "Termos e condicoes de uso dos servicos e sistemas AllTech Tecnologia.",
+      "ogImage": "/assets/logo.png",
+      "type": "legal"
     }
   ]
 }

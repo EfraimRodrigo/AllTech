@@ -1,4 +1,4 @@
-# robots.txt para AllTech — alltech.com.br
+# robots.txt — AllTech Tecnologia
 # https://alltech.com.br
 
 User-agent: *
@@ -6,10 +6,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://alltech.com.br/sitemap.xml
-
-# Diretórios bloqueados (nenhum por enquanto, site é público)
-# Disallow: /admin/
-# Disallow: /api/
-
-# Crawl-delay opcional (não recomendado, melhor deixar Google decidir)
-# Crawl-delay: 1

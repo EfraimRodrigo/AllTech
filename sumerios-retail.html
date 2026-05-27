@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -70,7 +70,19 @@
             <a href="sumerios-commerce.html">Sumérios Commerce</a>
           </div>
         </div>
-        <a href="index.html#segmentos">Segmentos</a>
+        <div class="nav-dropdown">
+          <a href="index.html#segmentos">Segmentos</a>
+          <div class="nav-dropdown-menu">
+            <a href="segmento-supermercados.html">Supermercados</a>
+            <a href="segmento-farmacias.html">Farmácias</a>
+            <a href="segmento-petshops.html">Pet Shops</a>
+            <a href="segmento-presentes.html">Presentes</a>
+            <a href="segmento-magazines.html">Magazines</a>
+            <a href="segmento-lanchonetes.html">Lanchonetes</a>
+            <a href="segmento-saloes-beleza.html">Salões de Beleza</a>
+            <a href="segmento-depositos.html">Depósitos</a>
+          </div>
+        </div>
         <a href="quem-somos.html">Quem Somos</a>
         <a href="cases.html">Cases</a>
         <a href="contato.html" class="nav-cta">Fale Conosco</a>
@@ -90,6 +102,15 @@
     <a href="sumerios-crm.html">Sumérios CRM</a>
     <a href="sumerios-commerce.html">Sumérios Commerce</a>
     <a href="zapp.html">Zapp</a>
+    <span class="mobile-sub-title">Segmentos</span>
+    <a href="segmento-supermercados.html">Supermercados</a>
+    <a href="segmento-farmacias.html">Farmácias</a>
+    <a href="segmento-petshops.html">Pet Shops</a>
+    <a href="segmento-presentes.html">Presentes</a>
+    <a href="segmento-magazines.html">Magazines</a>
+    <a href="segmento-lanchonetes.html">Lanchonetes</a>
+    <a href="segmento-saloes-beleza.html">Salões de Beleza</a>
+    <a href="segmento-depositos.html">Depósitos</a>
     <span class="mobile-sub-title">Empresa</span>
     <a href="quem-somos.html">Quem Somos</a>
     <a href="cases.html">Cases</a>
@@ -205,10 +226,21 @@
           </div>
           <p>Líder em soluções de automação comercial com mais de 20 anos de experiência. Tecnologia brasileira feita para resultados reais.</p>
           <div class="footer-socials">
-            <a href="#" aria-label="LinkedIn da AllTech"><span class="sr-only">LinkedIn</span><span aria-hidden="true">LN</span></a>
-            <a href="#" aria-label="Instagram da AllTech"><span class="sr-only">Instagram</span><span aria-hidden="true">IG</span></a>
-            <a href="#" aria-label="Facebook da AllTech"><span class="sr-only">Facebook</span><span aria-hidden="true">FB</span></a>
-            <a href="#" aria-label="YouTube da AllTech"><span class="sr-only">YouTube</span><span aria-hidden="true">YT</span></a>
+            <!-- TODO: Criar perfil LinkedIn → substituir href="#" pela URL real -->
+            <!-- Ex: href="https://linkedin.com/company/alltech-tecnologia" -->
+            <a href="#" aria-label="LinkedIn da AllTech" title="LinkedIn — em breve"><span class="sr-only">LinkedIn</span><span aria-hidden="true">LN</span></a>
+
+            <!-- TODO: Criar perfil Instagram → substituir href="#" pela URL real -->
+            <!-- Ex: href="https://instagram.com/alltech.tecnologia" -->
+            <a href="#" aria-label="Instagram da AllTech" title="Instagram — em breve"><span class="sr-only">Instagram</span><span aria-hidden="true">IG</span></a>
+
+            <!-- TODO: Criar página Facebook → substituir href="#" pela URL real -->
+            <!-- Ex: href="https://facebook.com/alltechbr" -->
+            <a href="#" aria-label="Facebook da AllTech" title="Facebook — em breve"><span class="sr-only">Facebook</span><span aria-hidden="true">FB</span></a>
+
+            <!-- TODO: Criar canal YouTube → substituir href="#" pela URL real -->
+            <!-- Ex: href="https://youtube.com/@alltech" -->
+            <a href="#" aria-label="YouTube da AllTech" title="YouTube — em breve"><span class="sr-only">YouTube</span><span aria-hidden="true">YT</span></a>
           </div>
         </div>
         <div class="footer-col">
@@ -238,7 +270,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 AllTech Tecnologia. Todos os direitos reservados.</p>
+        <p>&copy; 2026 AllTech Tecnologia. Todos os direitos reservados.</p>
         <div class="flex-gap-6">
           <a href="privacidade.html">Privacidade</a>
           <a href="termos.html">Termos de Uso</a>
@@ -308,5 +340,10 @@
   })();
   </script>
   <script src="js/float-contact.js"></script>
+
+  <!-- ANALYTICS + EMAILJS + CHAT — Configurações -->
+  <script src="js/analytics-config.js"></script>
+  <script src="js/emailjs-config.js"></script>
+  <script src="chat-config.js"></script>
 </body>
 </html>
