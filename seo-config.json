@@ -1,4 +1,5 @@
 ﻿{
+  "_nota_deploy": "Site publicado em https://efraimrodrigo.github.io/AllTech/ — canonicals mantidos em alltech.com.br. Quando o dominio for configurado, apontar DNS para GitHub Pages (CNAME: efraimrodrigo.github.io) e adicionar arquivo CNAME na raiz do repositorio com o valor alltech.com.br",
   "site": {
     "name": "AllTech Tecnologia",
     "url": "https://alltech.com.br",
